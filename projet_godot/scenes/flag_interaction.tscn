@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bepwj7u348sa8"]
+[gd_scene load_steps=10 format=3 uid="uid://bepwj7u348sa8"]
 
+[ext_resource type="Script" uid="uid://dck2iyo2l6mn7" path="res://scripts/flag_interaction_souris.gd" id="1_1og1g"]
 [ext_resource type="Texture2D" uid="uid://cvgy135xfmc0" path="res://assets/input_prompts/mouse_move.png" id="1_rl6jq"]
 [ext_resource type="Texture2D" uid="uid://c26nmvh2x0xdm" path="res://assets/tiles/flag_off.png" id="2_1og1g"]
 [ext_resource type="Texture2D" uid="uid://bcriffqwqooc0" path="res://assets/tiles/flag_blue_a.png" id="3_jqjs0"]
 [ext_resource type="Texture2D" uid="uid://bh20j4itlf7np" path="res://assets/tiles/flag_blue_b.png" id="4_ywgii"]
 [ext_resource type="Texture2D" uid="uid://pm4g51b42dqp" path="res://assets/tiles/block_empty.png" id="5_k2yvs"]
+[ext_resource type="Texture2D" uid="uid://27gyp7h52b02" path="res://assets/input_prompts/mouse_left.png" id="7_ywgii"]
+[ext_resource type="Script" uid="uid://ejbayw3a02o4" path="res://scripts/mouse_left.gd" id="8_k2yvs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tipki"]
 animations = [{
@@ -29,20 +32,32 @@ animations = [{
 }]
 
 [node name="Flag" type="Node2D"]
+script = ExtResource("1_1og1g")
 
 [node name="MouseMove" type="Sprite2D" parent="."]
-position = Vector2(577, 163)
+modulate = Color(1, 0.633333, 0, 1)
+texture_filter = 1
+position = Vector2(538, 172)
 texture = ExtResource("1_rl6jq")
 
 [node name="FlagBlueA" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(560, 352)
 sprite_frames = SubResource("SpriteFrames_tipki")
 animation = &"no_flag"
+frame_progress = 0.807825
 
 [node name="BlockEmpty" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(545, 416)
 texture = ExtResource("5_k2yvs")
 
 [node name="BlockEmpty2" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(609, 416)
 texture = ExtResource("5_k2yvs")
+
+[node name="MouseLeft" type="Sprite2D" parent="."]
+position = Vector2(627, 171)
+texture = ExtResource("7_ywgii")
+script = ExtResource("8_k2yvs")
