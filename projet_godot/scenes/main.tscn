@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk3wjdswmpia8"]
+
+[ext_resource type="PackedScene" uid="uid://bepwj7u348sa8" path="res://scenes/flag_interaction.tscn" id="1_o5qli"]
+
+[node name="Main" type="Node"]
+
+[node name="Flag" parent="." instance=ExtResource("1_o5qli")]
